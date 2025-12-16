@@ -60,9 +60,18 @@
 - **Open source**: Built on Cal.com's proven scheduling infrastructure
 - **AGPLv3 licensed**: You are in charge of your own data, workflow, and appearance
 
-## Attribution
+## Attribution & License
 
 BookPH is forked from [Cal.com](https://github.com/calcom/cal.com), the open-source Calendly successor. We maintain compliance with the AGPLv3 license and contribute improvements back to the open-source community.
+
+**Copyright (c) 2020-present Cal.com, Inc.**  
+**Portions Copyright (c) 2025 BookPH**
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)**. See [LICENSE](./LICENSE) for full details.
+
+> ⚠️ **Important Note for Self-Hosters:** This self-hosted version has **enterprise features disabled** (Teams, Organizations, SSO from the `/ee` directory). These features require a commercial license from Cal.com. This version focuses on core scheduling functionality available under AGPLv3.
+
+As required by **AGPLv3 Section 13**, all network users of this software have access to the complete source code at: **https://github.com/Be1l-ai/bookph**
 
 ## Recognition
 

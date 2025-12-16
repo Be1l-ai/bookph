@@ -1,0 +1,50 @@
+BookPH
+Copyright (c) 2020-present Cal.com, Inc.
+Portions Copyright (c) 2025 BookPH
+
+This product includes software developed by Cal.com, Inc. (https://cal.com)
+
+BookPH is a fork of Cal.com and is distributed under the terms of the 
+GNU Affero General Public License v3.0 (AGPLv3). See LICENSE file for details.
+
+================================================================================
+
+ENTERPRISE FEATURES NOTICE:
+
+This self-hosted version of BookPH does NOT include enterprise features that
+are located in the /ee directory of the original Cal.com repository, including:
+
+- Teams and Organizations functionality
+- SSO/SAML authentication
+- Enterprise billing features
+- Premium support integrations
+
+These features are covered by a separate commercial license. If you require
+these features, please contact Cal.com for commercial licensing options.
+
+================================================================================
+
+AGPLV3 NETWORK USE REQUIREMENT:
+
+As required by Section 13 of the AGPLv3 license, users who interact with this
+software over a network must be offered access to the Corresponding Source code.
+
+The complete source code for BookPH is available at:
+https://github.com/Be1l-ai/bookph
+
+================================================================================
+
+THIRD-PARTY SOFTWARE:
+
+This project incorporates third-party open source software. Please refer to the
+respective licenses of these components:
+
+- Next.js (MIT License)
+- React (MIT License)
+- Prisma (Apache License 2.0)
+- Tailwind CSS (MIT License)
+- tRPC (MIT License)
+- And other dependencies listed in package.json files
+
+For a complete list of dependencies and their licenses, see the package.json
+files throughout the repository.
