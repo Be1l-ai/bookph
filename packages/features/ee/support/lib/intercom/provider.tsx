@@ -26,68 +26,21 @@ function IntercomBootstrap() {
 }
 
 const Provider: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { hasPaidPlan } = useHasPaidPlan();
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const flagMap = useFlagMap();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-  const { data: session } = useSession();
-
-  const isBeingImpersonated = !!session?.user?.impersonatedBy?.id;
-
-  const shouldOpenSupport =
-    pathname === "/event-types" && (searchParams?.has("openPlain") || searchParams?.has("openSupport"));
-
-  useEffect(() => {
-    const handleSupportReady = () => {
-      if (window.Support) {
-        window.Support.shouldShowTriggerButton?.(!isMobile);
-
-        if (shouldOpenSupport) {
-          window.Support.open();
-          const url = new URL(window.location.href);
-          url.searchParams.delete("openPlain");
-          url.searchParams.delete("openSupport");
-          router.replace(url.pathname + url.search);
-        }
-      }
-    };
-
-    if (window.Support) {
-      handleSupportReady();
-    } else {
-      window.addEventListener("support:ready", handleSupportReady);
-    }
-
-    return () => {
-      window.removeEventListener("support:ready", handleSupportReady);
-    };
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shouldOpenSupport, isMobile]);
-
-  const isOnboardingPage = pathname?.startsWith("/getting-started");
-  const isCalVideoPage = pathname?.startsWith("/video/");
-
-  if (isOnboardingPage || isCalVideoPage || isBeingImpersonated) {
-    return <>{children}</>;
-  }
-
-  if (flagMap["tiered-support-chat"] && !hasPaidPlan) {
-    return (
-      <>
-        {children}
-        <IntercomContactForm />
-      </>
-    );
-  }
-
-  return (
-    <IntercomProvider appId={process.env.NEXT_PUBLIC_INTERCOM_APP_ID || ""}>
-      <IntercomBootstrap />
-      {children}
-    </IntercomProvider>
-  );
+  // BookPH: Intercom support widget disabled for AGPLv3 self-hosted version
+  // All Intercom functionality has been disabled
+  // const { hasPaidPlan } = useHasPaidPlan();
+  // const isMobile = useMediaQuery("(max-width: 768px)");
+  // const flagMap = useFlagMap();
+  // const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const router = useRouter();
+  // const { data: session } = useSession();
+  // const isBeingImpersonated = !!session?.user?.impersonatedBy?.id;
+  // const shouldOpenSupport = pathname === "/event-types" && (searchParams?.has("openPlain") || searchParams?.has("openSupport"));
+  // ... (all Intercom initialization code removed)
+  
+  // Simply return children without Intercom support widget
+  return <>{children}</>;
 };
 
 export default Provider;

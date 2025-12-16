@@ -104,7 +104,31 @@ All default URLs updated to use bookph.com:
 ### Logo Assets (6 files)
 13-18. apps/web/public/bookph-*.svg (6 logo files)
 
-**Total: 18 files modified/created**
+### Phase 2.4: Compliance & Enterprise (22 files)
+19. LICENSE
+20. README.md (updated with license section)
+21. NOTICE (new file)
+22. DEPLOYMENT.md (new file)
+23. .env.example (telemetry disabled)
+24. .env.bookph.example (new simplified template)
+25. .gitignore (allow .env.bookph.example)
+26. REBRANDING.md (this file, updated)
+27. apps/web/components/ui/AuthContainer.tsx (source code link)
+28. apps/web/modules/auth/login-view.tsx (SSO disabled)
+29. apps/web/modules/signup-view.tsx (posthog disabled)
+30. packages/features/shell/SideBar.tsx (source code link)
+31. packages/features/shell/navigation/Navigation.tsx (teams/orgs disabled)
+32. packages/features/ee/event-tracking/lib/posthog/provider.tsx (disabled)
+33. packages/features/ee/event-tracking/lib/posthog/web/PostHogPageView.tsx (disabled)
+34. packages/features/ee/support/lib/intercom/provider.tsx (disabled)
+35. packages/features/ee/support/lib/helpscout/provider.tsx (disabled)
+36. apps/web/components/getting-started/steps-views/UserProfile.tsx (posthog disabled)
+37. apps/web/components/getting-started/components/AppConnectionItem.tsx (posthog disabled)
+38. apps/web/app/(use-page-wrapper)/apps/routing-forms/forms/[[...pages]]/Forms.tsx (posthog disabled)
+39. apps/web/app/(use-page-wrapper)/(main-nav)/teams/CTA.tsx (posthog disabled)
+40. apps/web/modules/availability/availability-view.tsx (posthog disabled)
+
+**Total: 40 files modified/created**
 
 ## What Was NOT Changed
 
@@ -133,14 +157,50 @@ While the current rebranding focuses on visual and textual changes, the followin
 4. **Language Support**: Tagalog translations (in addition to English)
 5. **Local Business Hours**: Default to Philippine business hours
 
+## Phase 2.4: AGPLv3 Compliance & Enterprise Features ✅
+
+### Copyright & License Headers
+- **LICENSE**: Added "Portions Copyright (c) 2025 BookPH"
+- **README.md**: Added comprehensive license and attribution section
+- **NOTICE**: Created detailed attribution file with disclaimers
+
+### Enterprise Features Disabled
+Enterprise features from `/ee` directory have been disabled as they require a commercial license:
+- **Teams functionality**: Removed from navigation
+- **Organizations**: Members link hidden from navigation
+- **SSO/SAML authentication**: Disabled in login views
+- Clear comments added explaining feature removal
+
+### Telemetry Cleanup
+All third-party tracking and telemetry disabled for privacy:
+- **PostHog**: Analytics tracking completely disabled
+- **Intercom**: Support widget removed
+- **Helpscout**: Chat integration disabled
+- All `posthog.capture()` calls commented out
+- `CALCOM_TELEMETRY_DISABLED=1` set by default
+
+### AGPLv3 Network Use Compliance
+As required by AGPLv3 Section 13, source code links added:
+- **Login/Signup pages**: "Source Code" link in AuthContainer footer
+- **Main application**: "Source Code" link in sidebar (with mobile icon support)
+- Links point to: https://github.com/Be1l-ai/bookph
+
+### Simplified Environment Configuration
+- **Created**: `.env.bookph.example` with core features only
+- **Includes**: Database, NextAuth, Email, basic integrations
+- **Excludes**: Enterprise licenses, telemetry, premium features
+- **Documentation**: Deployment guide for Vercel + Supabase
+
 ## AGPLv3 License Compliance
 
 ✅ **Full compliance maintained:**
 - Source code remains open source
 - Proper attribution to Cal.com in README.md
-- AGPLv3 license file preserved
+- AGPLv3 license file preserved with BookPH copyright
 - Commercial use allowed under AGPLv3 terms
 - Fork clearly identified as based on Cal.com
+- Network users have access to source code (links in app)
+- Enterprise features properly disabled/documented
 
 ## Deployment Notes
 

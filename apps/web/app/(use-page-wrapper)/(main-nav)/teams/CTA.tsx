@@ -1,5 +1,5 @@
 "use client";
-import posthog from "posthog-js";
+// BookPH: Telemetry disabled - import posthog from "posthog-js";
 
 import { WEBAPP_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
@@ -15,7 +15,7 @@ export const TeamsCTA = () => {
       size="sm"
       type="button"
       onClick={() => {
-        posthog.capture("add_team_button_clicked")
+        // BookPH: Telemetry disabled - posthog.capture("add_team_button_clicked")
       }}
       href={`${WEBAPP_URL}/settings/teams/new?returnTo=${WEBAPP_URL}/teams`}>
       {t("new")}

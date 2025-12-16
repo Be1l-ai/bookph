@@ -183,6 +183,20 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
               </Tooltip>
             ))}
             {!IS_VISUAL_REGRESSION_TESTING && <Credits />}
+            {/* Portions Copyright (c) 2025 BookPH */}
+            {/* AGPLv3 requirement: Network users must have access to source code */}
+            <div className="text-subtle mb-2 mt-2 px-3 text-center text-xs">
+              <a
+                href="https://github.com/Be1l-ai/bookph"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-emphasis hover:underline">
+                <span className="hidden lg:inline">Source Code</span>
+                <span className="lg:hidden">
+                  <Icon name="code" className="mx-auto h-4 w-4" aria-label="Source Code" />
+                </span>
+              </a>
+            </div>
           </div>
         )}
       </aside>
