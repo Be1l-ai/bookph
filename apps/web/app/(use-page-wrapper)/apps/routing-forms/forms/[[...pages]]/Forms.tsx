@@ -3,7 +3,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import posthog from "posthog-js";
+// BookPH: Telemetry disabled - import posthog from "posthog-js";
 
 import { isFallbackRoute } from "@calcom/app-store/routing-forms/lib/isFallbackRoute";
 import type { RoutingFormWithResponseCount } from "@calcom/app-store/routing-forms/types/types";
@@ -47,7 +47,7 @@ function NewFormButton({ setNewFormDialogState }: { setNewFormDialogState: SetNe
       data-testid="new-routing-form"
       createFunction={(teamId) => {
         setNewFormDialogState({ action: "new", target: teamId ? String(teamId) : "" });
-        posthog.capture("new_routing_form_button_clicked", { teamId });
+        // BookPH: Telemetry disabled - posthog.capture("new_routing_form_button_clicked", { teamId });
       }}
       withPermission={{
         permission: "routingForm.create",

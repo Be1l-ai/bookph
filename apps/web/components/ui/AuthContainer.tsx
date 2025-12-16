@@ -29,6 +29,17 @@ export default function AuthContainer(props: React.PropsWithChildren<Props>) {
           {props.children}
         </div>
         <div className="text-default mt-8 text-center text-sm">{props.footerText}</div>
+        {/* Portions Copyright (c) 2025 BookPH */}
+        {/* AGPLv3 requirement: Network users must have access to source code */}
+        <div className="text-subtle mt-4 text-center text-xs">
+          <a
+            href="https://github.com/Be1l-ai/bookph"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emphasis underline">
+            Source Code
+          </a>
+        </div>
       </div>
     </div>
   );
