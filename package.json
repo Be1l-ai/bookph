@@ -1,6 +1,7 @@
 {
-  "name": "calcom-monorepo",
+  "name": "bookph-monorepo",
   "version": "0.0.0",
+  "description": "BookPH - Booking platform for Filipino professionals",
   "private": true,
   "workspaces": [
     "apps/*",
