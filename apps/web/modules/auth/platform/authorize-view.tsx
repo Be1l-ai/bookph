@@ -77,14 +77,14 @@ export default function Authorize() {
               alt=""
               fallback={<Icon name="plus" className="text-subtle h-6 w-6" />}
               className="items-center"
-              imageSrc="/cal-com-icon.svg"
+              imageSrc="/bookph-icon.svg"
               size="lg"
             />
           )}
           <div className="relative -ml-6 h-24 w-24">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="flex h-[70px] w-[70px] items-center justify-center  rounded-full bg-white">
-                <img src="/cal-com-icon.svg" alt="Logo" className="h-16 w-16 rounded-full" />
+                <img src="/bookph-icon.svg" alt="BookPH Logo" className="h-16 w-16 rounded-full" />
               </div>
             </div>
           </div>
