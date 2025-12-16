@@ -50,9 +50,8 @@ export const getCurrencySymbol = (currencyCode: string): string => {
     const currencyPart = parts.find((part) => part.type === "currency");
     return currencyPart?.value || "$";
   } catch {
-    // Ideally we would not reach here, but if for some reason we reach here, we return
-    // $ as default currency
-    console.warn(`Failed to get currency symbol for ${currencyCode}, falling back to $`);
+    // Fallback for invalid or unsupported currency codes
+    console.warn(`[BookPH Currency] Unsupported currency code: ${currencyCode}. Using default $ symbol.`);
     return "$";
   }
 };

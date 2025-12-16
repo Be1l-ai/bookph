@@ -64,9 +64,9 @@ export function defaultResponder<T>(
       } else {
         error = getServerErrorFromUnknown(tracedError);
       }
-      // we don't want to report Bad Request errors to Sentry / console
+      // Only report server errors (5xx), not client errors (4xx)
       if (!(error.statusCode >= 400 && error.statusCode < 500)) {
-        console.error(error);
+        console.error("[BookPH API] Server error:", error);
         const { captureException } = await import("@sentry/nextjs");
         captureException(tracedError);
       }

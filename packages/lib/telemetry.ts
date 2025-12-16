@@ -45,7 +45,7 @@ const reportUsage: EventHandler = async (event, { fetch }) => {
     try {
       return fetch(url, { method: "POST", mode: "cors" });
     } catch (e) {
-      console.error(`Error reporting booking for key: '${key}'`, e);
+      console.error(`[BookPH Analytics] Failed to report booking metrics for license key: '${key}'`, e);
       return Promise.resolve();
     }
   } else {

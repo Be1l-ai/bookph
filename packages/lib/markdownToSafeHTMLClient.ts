@@ -4,7 +4,7 @@ import { md } from "@calcom/lib/markdownIt";
 
 if (typeof window == "undefined") {
   console.warn(
-    "`markdownToSafeHTMLClient` should not be used on the server side. use markdownToSafeHTML instead"
+    "[BookPH Markdown] Client-side function called on server. Use markdownToSafeHTML for SSR contexts."
   );
 }
 

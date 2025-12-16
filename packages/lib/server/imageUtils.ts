@@ -29,7 +29,7 @@ export const convertSvgToPng = async (data: string) => {
       const pngBuffer = await sharp(buffer).png().toBuffer();
       return `data:image/png;base64,${pngBuffer.toString("base64")}`;
     } catch (error) {
-      console.error("Error converting SVG to PNG", error);
+      console.error("[BookPH Image] SVG to PNG conversion failed. Using transparent placeholder.", error);
       // Return a 1x1 transparent PNG as placeholder
       return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
     }
@@ -38,10 +38,9 @@ export const convertSvgToPng = async (data: string) => {
 };
 
 /**
- * Detect content type from image buffer.
- * Simplified version of Next.js image optimizer's detectContentType function (https://github.com/vercel/next.js/blob/9436dce61f1a3ff9478261dc2eba47e0527acf3d/packages/next/src/server/image-optimizer.ts#L160).
- * Supports common web image formats (JPEG, PNG, GIF, WEBP, AVIF, SVG) and drops
- * irrelevant formats like PDF, ICO, TIFF, etc. that aren't used for logos.
+ * Detect image format from buffer's magic bytes
+ * Checks for common web formats: JPEG, PNG, GIF, WEBP, AVIF, and SVG
+ * Returns null for unsupported formats
  */
 export async function detectContentType(buffer: Buffer): Promise<string | null> {
   if ([0xff, 0xd8, 0xff].every((b, i) => buffer[i] === b)) {

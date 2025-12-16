@@ -66,7 +66,7 @@ const OG_ASSETS = {
   },
   generic: {
     id: "generic-og-image-v1", // Bump version when changing Generic component structure/styling
-    logo: "cal-logo-word-black.svg",
+    logo: "bookph-logo-word-black.svg",
     logoWidth: "350",
     variant: "light" as const,
   },

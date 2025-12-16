@@ -63,7 +63,7 @@ export const useLocale = (): useLocaleReturnType => {
   }
 
   console.warn(
-    "useLocale hook is being used outside of App Router - hence this hook will use a global, client-side i18n which can cause a small flicker"
+    "[BookPH i18n] Using client-side locale hook outside App Router context. This may cause brief UI flicker during initial render."
   );
   return {
     t: clientI18n.t,
