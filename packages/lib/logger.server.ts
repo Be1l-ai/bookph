@@ -2,9 +2,9 @@ import fs from "fs";
 
 import logger from "./logger";
 
-/** This should be used if we want to ensure a log statement is always executed.
- *
- * This should only be used server side
+/** Critical logger for server-side only - guarantees log execution
+ * Use for critical errors that must be recorded even under high load
+ * Server-side only - do not import in client code
  */
 export const criticalLogger = logger.getSubLogger({
   name: "critical",
@@ -16,7 +16,7 @@ export const criticalLogger = logger.getSubLogger({
       try {
         fs.writeSync(process.stdout.fd, buffer);
       } catch (error) {
-        console.log(`Critical logger: Failed to write log using fs.writeSync: ${error}`);
+        console.log(`[BookPH Logger] Critical: File write failed - ${error}`);
         console.log(logString);
       }
     },
