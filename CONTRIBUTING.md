@@ -1,20 +1,20 @@
-# Contributing to Cal.com
+# Contributing to BookPH
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Thank you for your interest in contributing to BookPH! Open source thrives on community collaboration, and we value every contribution. Whether you're fixing bugs, adding features, or improving documentation, your work helps make scheduling easier for Filipino professionals.
 
-## House Rules (for PRs and Issues)
+## Contribution Guidelines
 
-### 👥 Prevent Work Duplication
+### 👥 Avoid Duplicate Work
 
-Before submitting a new issue or PR, check if it already exists in the [Issues](https://github.com/calcom/cal.com/issues) or [Pull Requests](https://github.com/calcom/cal.com/pulls).
+Search existing [Issues](https://github.com/Be1l-ai/bookph/issues) and [Pull Requests](https://github.com/Be1l-ai/bookph/pulls) before creating new ones to ensure you're not duplicating effort.
 
-### ✅ Work Only on Approved Issues
+### ✅ Get Approval for New Features
 
-For feature requests, please wait for a core team member to approve and remove the `🚨 needs approval` label before you start coding or submitting a PR.
+**Feature requests**: Wait for team approval (removal of `🚨 needs approval` label) before starting work.
 
-For bugs, security, performance, documentation, etc., you can start coding immediately—even if the `🚨 needs approval` label is present.
+**Bug fixes, security, performance, docs**: Start immediately without waiting for approval.
 
-We highly value new feature ideas, but to maintain consistency in the product direction, they must go through a review and approval process.
+We welcome innovative ideas, but feature requests require review to ensure alignment with BookPH's vision for Filipino professionals.
 
 ### 🚫 Don’t Just Drop a Link
 
@@ -31,9 +31,9 @@ If the task originated from a private conversation (e.g., Slack), take a moment 
 > Example:  
 > “A user requested feature X to solve problem Y. I considered approaches A, B, and C, but chose C for the following reasons…”
 
-### 📚 Treat It Like Documentation
+### 📚 Build Living Documentation
 
-GitHub is a shared source of truth. Every issue and PR contributes to the long-term understanding of the codebase. Write clearly enough that someone—possibly you—can revisit it months later and still understand what happened and why.
+GitHub preserves our project's history. Write issues and PRs that future contributors (including yourself) can understand months or years later. Clear documentation benefits everyone.
 
 ### ✅ Summarize Your PR at the Top
 
@@ -64,7 +64,7 @@ Write with the future in mind. If there are trade-offs, edge cases, or temporary
   <tr>
     <td>Minor improvements, non-core feature requests</td>
     <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22Low+priority%22">
+      <a href="https://github.com/Be1l-ai/bookph/issues?q=is:issue+is:open+sort:updated-desc+label:%22Low+priority%22">
         <img src="https://img.shields.io/badge/-Low%20Priority-green">
       </a>
     </td>
@@ -72,7 +72,7 @@ Write with the future in mind. If there are trade-offs, edge cases, or temporary
   <tr>
     <td>Confusing UX (but still functional)</td>
     <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22Medium+priority%22">
+      <a href="https://github.com/Be1l-ai/bookph/issues?q=is:issue+is:open+sort:updated-desc+label:%22Medium+priority%22">
         <img src="https://img.shields.io/badge/-Medium%20Priority-yellow">
       </a>
     </td>
@@ -80,7 +80,7 @@ Write with the future in mind. If there are trade-offs, edge cases, or temporary
   <tr>
     <td>Core Features (Booking page, availability, timezone calculation)</td>
     <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:%22High+priority%22">
+      <a href="https://github.com/Be1l-ai/bookph/issues?q=is:issue+is:open+sort:updated-desc+label:%22High+priority%22">
         <img src="https://img.shields.io/badge/-High%20Priority-orange">
       </a>
     </td>
@@ -88,7 +88,7 @@ Write with the future in mind. If there are trade-offs, edge cases, or temporary
   <tr>
     <td>Core Bugs (Login, Booking page, Emails not working)</td>
     <td>
-      <a href="https://github.com/calcom/cal.com/issues?q=is:issue+is:open+sort:updated-desc+label:Urgent">
+      <a href="https://github.com/Be1l-ai/bookph/issues?q=is:issue+is:open+sort:updated-desc+label:Urgent">
         <img src="https://img.shields.io/badge/-Urgent-red">
       </a>
     </td>
@@ -148,7 +148,7 @@ export class HashedLinkService { ... }
 
 ## Developing
 
-[See README](https://github.com/calcom/cal.com#development)
+[See README](https://github.com/Be1l-ai/bookph#development)
 
 ## Building
 
@@ -166,7 +166,7 @@ More info on how to add new tests coming soon.
 
 ### Running Tests
 
-[See README](https://github.com/calcom/cal.com#e2e-testing)
+[See README](https://github.com/Be1l-ai/bookph#e2e-testing)
 
 #### Resolving Issues
 

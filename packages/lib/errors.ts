@@ -66,7 +66,7 @@ export async function handleErrorsJson<Type>(response: Response): Promise<Type> 
   }
 
   if (!response.ok && (response.status < 200 || response.status >= 300)) {
-    response.json().then(console.log);
+    response.json().then((data) => console.log("[BookPH API] Error response:", data));
     throw Error(response.statusText);
   }
 
@@ -75,11 +75,11 @@ export async function handleErrorsJson<Type>(response: Response): Promise<Type> 
 
 export function handleErrorsRaw(response: Response) {
   if (response.status === 204) {
-    console.error({ response });
+    console.error("[BookPH API] Unexpected 204 status:", { response });
     return "{}";
   }
   if (!response.ok || response.status < 200 || response.status >= 300) {
-    response.text().then(console.log);
+    response.text().then((text) => console.log("[BookPH API] Error text:", text));
     throw Error(response.statusText);
   }
   return response.text();

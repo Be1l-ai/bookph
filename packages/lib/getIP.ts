@@ -6,8 +6,8 @@ export function parseIpFromHeaders(value: string | string[]) {
 }
 
 /**
- * Tries to extract IP address from a request
- * @see https://github.com/vercel/examples/blob/main/edge-functions/ip-blocking/lib/get-ip.ts
+ * Extracts client IP address from request headers
+ * Checks Cloudflare and X-Real-IP headers, falls back to localhost
  **/
 export default function getIP(request: Request | NextApiRequest) {
   let xff =
@@ -29,7 +29,7 @@ export function isIpInBanlist(request: Request | NextApiRequest) {
   const rawBanListJson = process.env.IP_BANLIST || "[]";
   const banList = banlistSchema.parse(JSON.parse(rawBanListJson));
   if (banList.includes(IP)) {
-    console.log(`Found banned IP: ${IP} in IP_BANLIST`);
+    console.log(`[BookPH Security] Blocked request from banned IP: ${IP}`);
     return true;
   }
   return false;
@@ -39,7 +39,7 @@ export function isIpInBanListString(identifer: string) {
   const rawBanListJson = process.env.IP_BANLIST || "[]";
   const banList = banlistSchema.parse(JSON.parse(rawBanListJson));
   if (banList.includes(identifer)) {
-    console.log(`Found banned IP: ${identifer} in IP_BANLIST`);
+    console.log(`[BookPH Security] Blocked identifier from banlist: ${identifer}`);
     return true;
   }
   return false;

@@ -8,7 +8,7 @@ export const IS_PRODUCTION_BUILD = process.env.NODE_ENV === "production";
 export const ORGANIZER_EMAIL_EXEMPT_DOMAINS = process.env.ORGANIZER_EMAIL_EXEMPT_DOMAINS || "";
 const IS_DEV = CALCOM_ENV === "development";
 export const SINGLE_ORG_SLUG = process.env.NEXT_PUBLIC_SINGLE_ORG_SLUG;
-/** https://app.cal.com */
+/** Base application URL - defaults to https://bookph.com in production */
 export const WEBAPP_URL =
   process.env.NEXT_PUBLIC_WEBAPP_URL ||
   VERCEL_URL ||
@@ -17,8 +17,8 @@ export const WEBAPP_URL =
   RENDER_URL ||
   "http://localhost:3000";
 
-// OAuth needs to have HTTPS(which is not generally setup locally) and a valid tld(*.local isn't a valid tld)
-// So for development purpose, we would stick to localhost only
+// OAuth requires HTTPS and valid TLD (*.local domains aren't recognized)
+// For local development, we use localhost with HTTP for convenience
 export const WEBAPP_URL_FOR_OAUTH = IS_PRODUCTION || IS_DEV ? WEBAPP_URL : "http://localhost:3000";
 
 /** @deprecated use `WEBAPP_URL` */
@@ -31,11 +31,11 @@ export const SENDER_ID = process.env.NEXT_PUBLIC_SENDER_ID || "BookPH";
 export const SENDER_NAME = process.env.NEXT_PUBLIC_SENDGRID_SENDER_NAME || "BookPH";
 export const EMAIL_FROM_NAME = process.env.EMAIL_FROM_NAME || APP_NAME;
 
-// This is the URL from which all Cal Links and their assets are served.
-// Use website URL to make links shorter(cal.com and not app.cal.com)
-// As website isn't setup for preview environments, use the webapp url instead
-// If it's a .vercel.app domain, keep it.
-// Else use the website url if defined and finally fallback to the webapp url
+// Primary URL for serving booking links and static assets
+// Prefers shorter domain (bookph.com vs app.bookph.com) for cleaner links
+// Falls back to webapp URL for preview/staging environments
+// Vercel preview domains are preserved as-is
+// Resolution order: vercel domain → website URL → webapp URL
 export const CAL_URL = new URL(WEBAPP_URL).hostname.endsWith(".vercel.app")
   ? WEBAPP_URL
   : process.env.NEXT_PUBLIC_WEBSITE_URL || WEBAPP_URL;
@@ -62,10 +62,10 @@ export const EMBED_LIB_URL = process.env.NEXT_PUBLIC_EMBED_LIB_URL || `${WEBAPP_
 export const TRIAL_LIMIT_DAYS = 14;
 export const MAX_SEATS_PER_TIME_SLOT = 1000;
 
-/** Maximum duration allowed for an event in minutes (24 hours) */
+/** Max booking duration - 24 hours (1440 minutes) */
 export const MAX_EVENT_DURATION_MINUTES = 1440;
 
-/** Minimum duration allowed for an event in minutes */
+/** Min booking duration - 1 minute */
 export const MIN_EVENT_DURATION_MINUTES = 1;
 
 export const HOSTED_CAL_FEATURES = process.env.NEXT_PUBLIC_HOSTED_CAL_FEATURES || !IS_SELF_HOSTED;
