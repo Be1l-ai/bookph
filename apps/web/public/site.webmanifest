@@ -1,7 +1,7 @@
 {
-    "name": "Cal.com",
-    "short_name": "Cal.com",
-    "description": "Scheduling infrastructure for absolutely everyone.",
+    "name": "BookPH",
+    "short_name": "BookPH",
+    "description": "Booking platform for Filipino professionals.",
     "icons": [
         {
             "src": "/api/logo?type=android-chrome-192",
