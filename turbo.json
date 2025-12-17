@@ -376,67 +376,6 @@
     "@calcom/atoms#build": {
       "outputs": ["dist/**", "globals.min.css"]
     },
-    "@calcom/api-v2#build": {
-      "dependsOn": ["^build"],
-      "env": [
-        "NODE_ENV",
-        "API_PORT",
-        "DATABASE_READ_URL",
-        "DATABASE_WRITE_URL",
-        "LOG_LEVEL",
-        "NEXTAUTH_SECRET",
-        "USE_POOL",
-        "LOGGER_BRIDGE_LOG_LEVEL"
-      ]
-    },
-    "@calcom/ai#build": {
-      "env": [
-        "FRONTEND_URL",
-        "BACKEND_URL",
-        "APP_ID",
-        "APP_URL",
-        "SENDER_DOMAIN",
-        "PARSE_KEY",
-        "NODE_ENV",
-        "OPENAI_API_KEY",
-        "SENDGRID_API_KEY",
-        "DATABASE_URL"
-      ]
-    },
-    "@calcom/website#build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**"],
-      "env": [
-        "CSP_POLICY",
-        "DATABASE_URL",
-        "DATOCMS_API_TOKEN",
-        "DATOCMS_GRAPHQL_ENDPOINT",
-        "DATOCMS_WEBHOOK_SECRET",
-        "DATOCMS_PREVIEW_SECRET",
-        "ENVIRONMENT_URL",
-        "NEXT_PUBLIC_AVAILABILITY_SCHEDULE_INTERVAL",
-        "NEXT_PUBLIC_IS_PREMIUM_NEW_PLAN",
-        "NEXT_PUBLIC_STRIPE_FREE_PLAN_PRICE",
-        "NEXT_PUBLIC_STRIPE_PREMIUM_NEW_PLAN_PRICE",
-        "NEXT_PUBLIC_STRIPE_PREMIUM_PLAN_PRICE",
-        "NEXT_PUBLIC_STRIPE_PRO_PLAN_PRICE",
-        "NEXT_PUBLIC_STRIPE_PUBLIC_KEY",
-        "NEXT_PUBLIC_WEBAPP_URL",
-        "NEXT_PUBLIC_WEBSITE_URL",
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_VERCEL_BRANCH_URL",
-        "NEXT_PUBLIC_POSTHOG_KEY",
-        "NEXT_PUBLIC_POSTHOG_HOST",
-        "SENDGRID_VERIFICATION_KEY",
-        "STRIPE_FREE_PLAN_PRODUCT_ID",
-        "STRIPE_PREMIUM_PLAN_PRODUCT_ID",
-        "STRIPE_PRO_PLAN_PRODUCT_ID",
-        "STRIPE_SUPPORT_TABLE",
-        "MOTIFLAND_REST_ENDPOINT",
-        "MOTIFLAND_DOCS_API_KEY",
-        "MOTIFLAND_DOCS_PROJECT_ID"
-      ]
-    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
