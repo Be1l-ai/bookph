@@ -4161,5 +4161,14 @@
   "timestamp": "Timestamp",
   "json": "JSON",
   "hubspot_ignore_guests": "Do not create new records for guests added to the booking",
+  "gcash_number": "GCash Number",
+  "maya_number": "Maya Number",
+  "payment_details": "Payment Details",
+  "show_payment_details_on_booking": "Show payment details on booking confirmation",
+  "payment_details_consent": "By providing these, you agree to show them to clients for payment purposes.",
+  "invalid_philippine_mobile": "Please enter a valid Philippine mobile number (e.g., 09171234567 or +639171234567)",
+  "event_type_templates": "Event Type Templates",
+  "use_template_to_get_started": "Select a template to quickly get started",
+  "all": "All",
   "ADD_NEW_STRINGS_ABOVE_THIS_LINE_TO_PREVENT_MERGE_CONFLICTS": "↑↑↑↑↑↑↑↑↑↑↑↑↑ Add your new strings above here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑"
 }

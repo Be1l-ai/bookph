@@ -32,6 +32,9 @@ export default function BookingSuccessful() {
   const hostEmail = null; // Email not stored for spam decoy bookings
   const attendeeName = booking.booker?.name || null;
   const attendeeEmail = booking.booker?.email || null;
+  const hostGcashNumber = (booking.host as any)?.gcashNumber || null;
+  const hostMayaNumber = (booking.host as any)?.mayaNumber || null;
+  const showPaymentDetails = (booking.host as any)?.showPaymentDetails || false;
 
   return (
     <DecoyBookingSuccessCard
@@ -45,6 +48,9 @@ export default function BookingSuccessful() {
       attendeeName={attendeeName}
       attendeeEmail={attendeeEmail}
       location={booking.location || null}
+      hostGcashNumber={hostGcashNumber}
+      hostMayaNumber={hostMayaNumber}
+      showPaymentDetails={showPaymentDetails}
     />
   );
 }
