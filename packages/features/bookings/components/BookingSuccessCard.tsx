@@ -13,6 +13,9 @@ export interface BookingSuccessCardProps {
   attendeeName: string | null;
   attendeeEmail: string | null;
   location: string | null;
+  hostGcashNumber?: string | null;
+  hostMayaNumber?: string | null;
+  showPaymentDetails?: boolean;
 }
 
 export function BookingSuccessCard({
@@ -26,6 +29,9 @@ export function BookingSuccessCard({
   attendeeName,
   attendeeEmail,
   location,
+  hostGcashNumber,
+  hostMayaNumber,
+  showPaymentDetails,
 }: BookingSuccessCardProps) {
   const { t } = useLocale();
 
@@ -100,6 +106,26 @@ export function BookingSuccessCard({
                       <>
                         <div className="mt-3 font-medium">{t("where")}</div>
                         <div className="col-span-2 mt-3">{t("web_conferencing_details_to_follow")}</div>
+                      </>
+                    )}
+
+                    {showPaymentDetails && (hostGcashNumber || hostMayaNumber) && (
+                      <>
+                        <div className="mt-3 font-medium">{t("payment_details")}</div>
+                        <div className="col-span-2 mt-3">
+                          {hostGcashNumber && (
+                            <div className="mb-2">
+                              <span className="font-medium">{t("gcash_number")}: </span>
+                              <span>{hostGcashNumber}</span>
+                            </div>
+                          )}
+                          {hostMayaNumber && (
+                            <div className="mb-2">
+                              <span className="font-medium">{t("maya_number")}: </span>
+                              <span>{hostMayaNumber}</span>
+                            </div>
+                          )}
+                        </div>
                       </>
                     )}
                   </div>
