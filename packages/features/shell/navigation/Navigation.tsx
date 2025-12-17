@@ -47,23 +47,24 @@ const getNavigationItems = (
     href: "/availability",
     icon: "clock",
   },
-  ...(orgBranding
-    ? [
-        {
-          name: "members",
-          href: `/settings/organizations/${orgBranding.slug}/members`,
-          icon: "building",
-          moreOnMobile: true,
-        } satisfies NavigationItemType,
-      ]
-    : []),
-  {
-    name: "teams",
-    href: "/teams",
-    icon: "users",
-    badge: <TeamInviteBadge />,
-    moreOnMobile: true,
-  },
+  // BookPH: Enterprise features (Teams, Organizations) disabled - not included in AGPLv3 self-hosted version
+  // ...(orgBranding
+  //   ? [
+  //       {
+  //         name: "members",
+  //         href: `/settings/organizations/${orgBranding.slug}/members`,
+  //         icon: "building",
+  //         moreOnMobile: true,
+  //       } satisfies NavigationItemType,
+  //     ]
+  //   : []),
+  // {
+  //   name: "teams",
+  //   href: "/teams",
+  //   icon: "users",
+  //   badge: <TeamInviteBadge />,
+  //   moreOnMobile: true,
+  // },
   {
     name: "apps",
     href: "/apps",

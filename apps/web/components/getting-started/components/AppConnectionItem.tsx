@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import posthog from "posthog-js";
+// BookPH: Telemetry disabled - import posthog from "posthog-js";
 
 import { InstallAppButtonWithoutPlanCheck } from "@calcom/app-store/InstallAppButtonWithoutPlanCheck";
 import type { TDependencyData } from "@calcom/app-store/_appRegistry";
@@ -110,7 +110,7 @@ const AppConnectionItem = (props: IAppConnectionItem) => {
                 ) : undefined
               }
               onClick={(event) => {
-                posthog.capture("onboarding_app_connect_clicked", {
+                // BookPH: Telemetry disabled - posthog.capture("onboarding_app_connect_clicked", {
                   app_title: title,
                   app_type: type,
                   app_slug: slug,

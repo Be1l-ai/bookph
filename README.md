@@ -1,24 +1,25 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <a href="https://github.com/calcom/cal.com">
-   <img src="https://user-images.githubusercontent.com/8019099/210054112-5955e812-a76e-4160-9ddd-58f2c72f1cce.png" alt="Logo">
+  <a href="https://github.com/Be1l-ai/bookph">
+   <img src="https://user-images.githubusercontent.com/8019099/210054112-5955e812-a76e-4160-9ddd-58f2c72f1cce.png" alt="BookPH Logo">
   </a>
 
-  <h3 align="center">Cal.com</h3>
+  <h3 align="center">BookPH</h3>
 
   <p align="center">
-    The open-source Calendly successor.
+    Booking platform for Filipino professionals.
     <br />
-    <a href="https://cal.com"><strong>Learn more »</strong></a>
+    <strong>Forked from Cal.com and customized for Philippine market</strong>
     <br />
     <br />
-    <a href="https://github.com/calcom/cal.com/discussions">Discussions</a>
+    <a href="https://bookph.com"><strong>Learn more »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Be1l-ai/bookph/discussions">Discussions</a>
     ·
-    <a href="https://cal.com">Website</a>
+    <a href="https://bookph.com">Website</a>
     ·
-    <a href="https://github.com/calcom/cal.com/issues">Issues</a>
-    ·
-    <a href="https://cal.com/roadmap">Roadmap</a>
+    <a href="https://github.com/Be1l-ai/bookph/issues">Issues</a>
   </p>
 </p>
 
@@ -47,14 +48,30 @@
 
 <img width="100%" alt="booking-screen" src="https://github.com/calcom/cal.com/assets/8019099/407e727e-ff19-4ca4-bcae-049dca05cf02">
 
-# Scheduling infrastructure for absolutely everyone
+# Scheduling platform for Filipino professionals
 
-The open source Calendly successor. You are in charge
-of your own data, workflow, and appearance.
+**BookPH** is a booking and scheduling platform specifically designed for Filipino freelancers, VAs, and service providers. Built on the open-source Cal.com foundation, BookPH provides an affordable, powerful alternative to expensive scheduling tools.
 
-Calendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, seminars, yoga classes, and even calls with our families. However, most tools are very limited in terms of control and customization.
+## Why BookPH?
 
-That's where Cal.com comes in. Self-hosted or hosted by us. White-label by design. API-driven and ready to be deployed on your own domain. Full control of your events and data.
+- **80% cheaper than Calendly**: Only ₱249/month vs ₱1,140/month
+- **Philippine-focused features**: Designed with Filipino professionals in mind
+- **Full control**: Self-hosted or hosted by us. White-label by design.
+- **Open source**: Built on Cal.com's proven scheduling infrastructure
+- **AGPLv3 licensed**: You are in charge of your own data, workflow, and appearance
+
+## Attribution & License
+
+BookPH is forked from [Cal.com](https://github.com/calcom/cal.com), the open-source Calendly successor. We maintain compliance with the AGPLv3 license and contribute improvements back to the open-source community.
+
+**Copyright (c) 2020-present Cal.com, Inc.**  
+**Portions Copyright (c) 2025 BookPH**
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)**. See [LICENSE](./LICENSE) for full details.
+
+> ⚠️ **Important Note for Self-Hosters:** This self-hosted version has **enterprise features disabled** (Teams, Organizations, SSO from the `/ee` directory). These features require a commercial license from Cal.com. This version focuses on core scheduling functionality available under AGPLv3.
+
+As required by **AGPLv3 Section 13**, all network users of this software have access to the complete source code at: **https://github.com/Be1l-ai/bookph**
 
 ## Recognition
 
@@ -84,24 +101,24 @@ This project is tested with browserstack
 
 ### Built With
 
-- [Next.js](https://nextjs.org/?ref=cal.com)
-- [tRPC](https://trpc.io/?ref=cal.com)
-- [React.js](https://reactjs.org/?ref=cal.com)
-- [Tailwind CSS](https://tailwindcss.com/?ref=cal.com)
-- [Prisma.io](https://prisma.io/?ref=cal.com)
-- [Daily.co](https://go.cal.com/daily)
+BookPH is built on top of Cal.com's proven technology stack:
 
-## Contact us
+- [Next.js](https://nextjs.org/)
+- [tRPC](https://trpc.io/)
+- [React.js](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Prisma.io](https://prisma.io/)
+- [Daily.co](https://daily.co/)
 
-Meet our sales team for any commercial inquiries.
+## Contact Us
 
-<a href="https://cal.com/sales"><img src="https://cal.com/book-with-cal-dark.svg" alt="Book us with Cal.com"></a>
+For inquiries about BookPH's hosted service or enterprise solutions, please visit [https://bookph.com](https://bookph.com).
 
 ## Stay Up-to-Date
 
-Cal.com officially launched as v.1.0 on the 15th of September 2021 and we've come a long way so far. Watch **releases** of this repository to be notified of future updates:
+Watch **releases** of this repository to be notified of updates:
 
-![cal-star-github](https://user-images.githubusercontent.com/8019099/154853944-a9e3c999-3da3-4048-b149-b4f73893c6fb.gif)
+![bookph-star-github](https://user-images.githubusercontent.com/8019099/154853944-a9e3c999-3da3-4048-b149-b4f73893c6fb.gif)
 
 <!-- GETTING STARTED -->
 
@@ -111,7 +128,7 @@ To get a local copy up and running, please follow these simple steps.
 
 ### Prerequisites
 
-Here is what you need to be able to run Cal.com.
+Here is what you need to be able to run BookPH.
 
 - Node.js (Version: >=18.x)
 - PostgreSQL (Version: >=13.x)
@@ -123,19 +140,19 @@ Here is what you need to be able to run Cal.com.
 
 ### Setup
 
-1. Clone the repo into a public GitHub repository (or fork https://github.com/calcom/cal.com/fork). If you plan to distribute the code, keep the source code public to comply with [AGPLv3](https://github.com/calcom/cal.com/blob/main/LICENSE). To clone in a private repository, [acquire a commercial license](https://cal.com/sales)
+1. Clone the repo into a public GitHub repository (or fork https://github.com/Be1l-ai/bookph/fork). If you plan to distribute the code, keep the source code public to comply with [AGPLv3](https://github.com/Be1l-ai/bookph/blob/main/LICENSE).
 
    ```sh
-   git clone https://github.com/calcom/cal.com.git
+   git clone https://github.com/Be1l-ai/bookph.git
    ```
 
-   > If you are on Windows, run the following command on `gitbash` with admin privileges: <br> > `git clone -c core.symlinks=true https://github.com/calcom/cal.com.git` <br>
+   > If you are on Windows, run the following command on `gitbash` with admin privileges: <br> > `git clone -c core.symlinks=true https://github.com/Be1l-ai/bookph.git` <br>
    > See [docs](https://cal.com/docs/how-to-guides/how-to-troubleshoot-symbolic-link-issues-on-windows#enable-symbolic-links) for more details.
 
 2. Go to the project folder
 
    ```sh
-   cd cal.com
+   cd bookph
    ```
 
 3. Install packages with yarn

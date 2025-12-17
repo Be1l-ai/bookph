@@ -12,6 +12,8 @@ import classNames from "@calcom/ui/classNames";
 import { getReactSelectProps, inputStyles } from "@calcom/ui/components/form";
 
 const SELECT_SEARCH_DATA: Timezones = [
+  { label: "Manila", timezone: "Asia/Manila" },
+  { label: "Philippine Time", timezone: "Asia/Manila" },
   { label: "San Francisco", timezone: "America/Los_Angeles" },
   { label: "Sao Francisco do Sul", timezone: "America/Sao_Paulo" },
   { label: "San Francisco de Macoris", timezone: "America/Santo_Domingo" },

@@ -1,0 +1,9 @@
+{
+  "book_an_appointment": "Mag-book ng Appointment",
+  "timezone": "Sona ng Oras",
+  "payment_details": "Detalye ng Pagbabayad",
+  "gcash_number": "Numero ng GCash",
+  "maya_number": "Numero ng Maya",
+  "show_payment_details_on_booking": "Ipakita ang detalye ng pagbabayad sa booking confirmation",
+  "payment_details_consent": "Sa pagbigay ng mga ito, sumasang-ayon ka na ipakita ang mga ito sa mga kliyente para sa layunin ng pagbabayad."
+}

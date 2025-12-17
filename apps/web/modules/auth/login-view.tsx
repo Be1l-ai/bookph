@@ -172,9 +172,9 @@ export default function Login({
     [error]
   );
 
-  const displaySSOLogin = HOSTED_CAL_FEATURES
-    ? true
-    : isSAMLLoginEnabled && !isPending && data?.connectionExists;
+  // BookPH: SSO is an enterprise feature - disabled for AGPLv3 self-hosted version
+  const displaySSOLogin = false;
+  // Original: HOSTED_CAL_FEATURES ? true : isSAMLLoginEnabled && !isPending && data?.connectionExists;
 
   return (
     <div className="text-emphasis min-h-screen [--cal-brand-emphasis:#101010] [--cal-brand-subtle:#9CA3AF] [--cal-brand-text:white] [--cal-brand:#111827] dark:[--cal-brand-emphasis:#e1e1e1] dark:[--cal-brand-text:black] dark:[--cal-brand:white]">

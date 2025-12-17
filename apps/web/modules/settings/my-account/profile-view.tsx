@@ -34,6 +34,7 @@ import { Editor } from "@calcom/ui/components/editor";
 import { Form } from "@calcom/ui/components/form";
 import { PasswordField } from "@calcom/ui/components/form";
 import { Label } from "@calcom/ui/components/form";
+import { Switch } from "@calcom/ui/components/form";
 import { TextField } from "@calcom/ui/components/form";
 import { Icon } from "@calcom/ui/components/icon";
 import { ImageUploader } from "@calcom/ui/components/image-uploader";
@@ -67,6 +68,9 @@ export type FormValues = {
   email: string;
   bio: string;
   secondaryEmails: Email[];
+  gcashNumber?: string;
+  mayaNumber?: string;
+  showPaymentDetails?: boolean;
 };
 type Props = {
   user: RouterOutputs["viewer"]["me"]["get"];
@@ -239,6 +243,9 @@ const ProfileView = ({ user }: Props) => {
     name: user.name || "",
     email: userEmail,
     bio: user.bio || "",
+    gcashNumber: (user as any).gcashNumber || "",
+    mayaNumber: (user as any).mayaNumber || "",
+    showPaymentDetails: (user as any).showPaymentDetails || false,
     // We add the primary email as the first item in the list
     secondaryEmails: [
       {
@@ -540,6 +547,21 @@ const ProfileForm = ({
         emailPrimary: z.boolean().optional(),
       })
     ),
+    gcashNumber: z
+      .string()
+      .optional()
+      .refine(
+        (val) => !val || /^(09|\+639)\d{9}$/.test(val),
+        t("invalid_philippine_mobile")
+      ),
+    mayaNumber: z
+      .string()
+      .optional()
+      .refine(
+        (val) => !val || /^(09|\+639)\d{9}$/.test(val),
+        t("invalid_philippine_mobile")
+      ),
+    showPaymentDetails: z.boolean().optional(),
   });
 
   const formMethods = useForm<FormValues>({
@@ -715,6 +737,35 @@ const ProfileForm = ({
             setFirstRender={setFirstRender}
             height="120px"
           />
+        </div>
+        <div className="mt-6">
+          <Label>{t("payment_details")}</Label>
+          <p className="text-subtle mb-2 text-sm">{t("payment_details_consent")}</p>
+          <div className="space-y-4">
+            <TextField
+              label={t("gcash_number")}
+              placeholder="09171234567"
+              {...formMethods.register("gcashNumber")}
+              error={formMethods.formState.errors.gcashNumber?.message}
+            />
+            <TextField
+              label={t("maya_number")}
+              placeholder="09171234567"
+              {...formMethods.register("mayaNumber")}
+              error={formMethods.formState.errors.mayaNumber?.message}
+            />
+            <Controller
+              control={formMethods.control}
+              name="showPaymentDetails"
+              render={({ field: { value, onChange } }) => (
+                <Switch
+                  label={t("show_payment_details_on_booking")}
+                  checked={value}
+                  onCheckedChange={onChange}
+                />
+              )}
+            />
+          </div>
         </div>
         {usersAttributes && usersAttributes?.length > 0 && (
           <div className="mt-6 flex flex-col">

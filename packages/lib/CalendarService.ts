@@ -352,7 +352,7 @@ export default abstract class BaseCalendarService implements Calendar {
     const allowedExtensions = ["eml", "ics"];
     const urlExtension = getFileExtension(url);
     if (!allowedExtensions.includes(urlExtension)) {
-      console.error(`Unsupported calendar object format: ${urlExtension}`);
+      console.error(`[BookPH Calendar] Unsupported format: ${urlExtension}. Expected: ${allowedExtensions.join(", ")}`);
       return false;
     }
     return true;
@@ -383,7 +383,7 @@ export default abstract class BaseCalendarService implements Calendar {
         const jcalData = ICAL.parse(sanitizeCalendarObject(object));
         vcalendar = new ICAL.Component(jcalData);
       } catch (e) {
-        console.error("Error parsing calendar object: ", e);
+        console.error("[BookPH Calendar] Failed to parse calendar data:", e);
         return;
       }
       const vevents = vcalendar.getAllSubcomponents("vevent");
@@ -423,11 +423,11 @@ export default abstract class BaseCalendarService implements Calendar {
               timezoneComp.addSubcomponent(standard);
               vcalendar.addSubcomponent(timezoneComp);
             } catch (e) {
-              // Adds try-catch to ensure the code proceeds when Apple Calendar provides non-standard TZIDs
-              console.log("error in adding vtimezone", e);
+              // Handle non-standard timezone IDs from Apple Calendar
+              console.log("[BookPH Calendar] Skipping non-standard timezone component:", e);
             }
           } else {
-            console.error("No timezone found");
+            console.error("[BookPH Calendar] Missing timezone information for event");
           }
         }
 
@@ -447,7 +447,7 @@ export default abstract class BaseCalendarService implements Calendar {
         if (event.isRecurring()) {
           let maxIterations = 365;
           if (["HOURLY", "SECONDLY", "MINUTELY"].includes(event.getRecurrenceTypes())) {
-            console.error(`Won't handle [${event.getRecurrenceTypes()}] recurrence`);
+            console.error(`[BookPH Calendar] Skipping high-frequency recurrence: ${event.getRecurrenceTypes()} (not supported for performance reasons)`);
             return;
           }
 
@@ -500,7 +500,7 @@ export default abstract class BaseCalendarService implements Calendar {
             }
           }
           if (maxIterations <= 0) {
-            console.warn("could not find any occurrence for recurring event in 365 iterations");
+            console.warn("[BookPH Calendar] Recurring event check limit reached (365 iterations). Event pattern may be too complex.");
           }
           return;
         }
@@ -700,7 +700,7 @@ export default abstract class BaseCalendarService implements Calendar {
         });
       return events;
     } catch (reason) {
-      console.error(reason);
+      console.error("[BookPH Calendar] Error fetching calendar events:", reason);
       throw reason;
     }
   }

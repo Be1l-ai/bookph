@@ -3,6 +3,6 @@ export const logP = (message: string) => {
 
   return () => {
     const end = performance.now();
-    console.log(`[PERF]: ${message} took ${end - start}ms`);
+    console.log(`[BookPH Performance] ${message} completed in ${end - start}ms`);
   };
 };

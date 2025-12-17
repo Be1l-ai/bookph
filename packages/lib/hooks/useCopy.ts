@@ -20,11 +20,11 @@ export function useCopy() {
         })
         .catch((error) => {
           onFailure();
-          console.error("Copy to clipboard failed:", error);
+          console.error("[BookPH Clipboard] Failed to copy text:", error);
         });
     } else {
       console.warn(
-        "You need to use a secure context to use clipboard \n Please use the following link: ",
+        "[BookPH Clipboard] Secure context required for clipboard access. HTTPS is needed, or use this link manually:",
         text
       );
       onFailure();

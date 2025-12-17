@@ -5,7 +5,7 @@ import { revalidateAvailabilityList } from "app/(use-page-wrapper)/(main-nav)/av
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
-import posthog from "posthog-js";
+// BookPH: Telemetry disabled - import posthog from "posthog-js";
 
 import { BulkEditDefaultForEventsModal } from "@calcom/features/eventtypes/components/BulkEditDefaultForEventsModal";
 import type { BulkUpdatParams } from "@calcom/features/eventtypes/components/BulkEditDefaultForEventsModal";
@@ -193,7 +193,7 @@ export const AvailabilityCTA = ({ canViewTeamAvailability }: AvailabilityCTAProp
 
   const toggleGroupOptions = [
     { value: "mine", label: t("my_availability") },
-    ...(canViewTeamAvailability ? [{ value: "team", label: t("team_availability"), onClick: () => { posthog.capture("team_availability_toggle_clicked") } }] : []),
+    ...(canViewTeamAvailability ? [{ value: "team", label: t("team_availability"), onClick: () => { // BookPH: Telemetry disabled - posthog.capture("team_availability_toggle_clicked") } }] : []),
   ]
 
   // Get a new searchParams string by merging the current
