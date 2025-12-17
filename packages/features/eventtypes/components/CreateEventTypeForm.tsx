@@ -9,11 +9,14 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { md } from "@calcom/lib/markdownIt";
 import slugify from "@calcom/lib/slugify";
 import turndown from "@calcom/lib/turndownService";
+import type { EventTypeTemplate } from "@calcom/web/lib/event-types/templates";
 import { Editor } from "@calcom/ui/components/editor";
 import { Form } from "@calcom/ui/components/form";
 import { TextAreaField } from "@calcom/ui/components/form";
 import { TextField } from "@calcom/ui/components/form";
 import { Tooltip } from "@calcom/ui/components/tooltip";
+
+import { EventTypeTemplateSelector } from "./EventTypeTemplateSelector";
 
 export default function CreateEventTypeForm({
   form,
@@ -37,6 +40,14 @@ export default function CreateEventTypeForm({
   const [firstRender, setFirstRender] = useState(true);
 
   const { register } = form;
+
+  const handleTemplateSelect = (template: EventTypeTemplate) => {
+    form.setValue("title", template.title, { shouldDirty: true });
+    form.setValue("slug", template.slug, { shouldDirty: true, shouldTouch: true });
+    form.setValue("length", template.length, { shouldDirty: true });
+    form.setValue("description", template.description, { shouldDirty: true });
+  };
+
   return (
     <Form
       form={form}
@@ -44,6 +55,7 @@ export default function CreateEventTypeForm({
         handleSubmit(values);
       }}>
       <div className="mt-3 stack-y-6 pb-11">
+        <EventTypeTemplateSelector onSelectTemplate={handleTemplateSelect} />
         <TextField
           label={t("title")}
           placeholder={t("quick_chat")}
