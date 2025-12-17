@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import type { EventTypeTemplate } from "@calcom/web/lib/event-types/templates";
-import { EVENT_TYPE_TEMPLATES, getTemplateCategories } from "@calcom/web/lib/event-types/templates";
+import type { EventTypeTemplate } from "@calcom/features/eventtypes/lib/templates";
+import { EVENT_TYPE_TEMPLATES, getTemplateCategories } from "@calcom/features/eventtypes/lib/templates";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { Button } from "@calcom/ui/components/button";
 import { Label } from "@calcom/ui/components/form";
