@@ -1,0 +1,47 @@
+➤ YN0000: ┌ Resolution step
+➤ YN0061: │ @faker-js/faker@npm:9.2.0 is deprecated: Please update to a newer version
+➤ YN0061: │ glob@npm:7.1.7 is deprecated: Glob versions prior to v9 are no longer supported
+➤ YN0061: │ @vercel/edge-config@npm:0.1.11 is deprecated: This version is no longer supported. Please upgrade to the latest version.
+➤ YN0061: │ @types/stripe@npm:8.0.417 is deprecated: This is a stub types definition. stripe provides its own type definitions, so you do not need this installed.
+➤ YN0001: │ Error: @calcom/app-store-cli@workspace:*: Workspace not found (@calcom/app-store-cli@workspace:*)
+    at je.getWorkspaceByDescriptor (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:439:3230)
+    at $d.getCandidates (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:390:29582)
+    at yf.getCandidates (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:391:1264)
+    at yf.getCandidates (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:391:1264)
+    at /home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:439:7693
+    at of (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:390:11070)
+    at ge (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:439:7673)
+    at async Promise.allSettled (index 2)
+    at async $s (/home/be1l-ai/Workspaces/bookph/.yarn/releases/yarn-3.4.1.cjs:390:10398)
+➤ YN0000: └ Completed in 3m 34s
+➤ YN0000: Failed with errors in 3m 34s
+➤ YN0032: fsevents@npm:2.3.3: Implicit dependencies on node-gyp are discouraged
+➤ YN0061: q@npm:2.0.3 is deprecated: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+
+(For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+➤ YN0032: @parcel/watcher@npm:2.5.1: Implicit dependencies on node-gyp are discouraged
+➤ YN0061: superagent@npm:8.1.2 is deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+➤ YN0032: fsevents@npm:2.3.2: Implicit dependencies on node-gyp are discouraged
+➤ YN0061: rimraf@npm:3.0.2 is deprecated: Rimraf versions prior to v4 are no longer supported
+➤ YN0061: glob@npm:7.2.3 is deprecated: Glob versions prior to v9 are no longer supported
+➤ YN0061: lodash.get@npm:4.4.2 is deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
+➤ YN0061: inflight@npm:1.0.6 is deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+➤ YN0061: abab@npm:2.0.6 is deprecated: Use your platform's native atob() and btoa() methods instead
+➤ YN0061: domexception@npm:4.0.0 is deprecated: Use your platform's native DOMException instead
+➤ YN0061: sourcemap-codec@npm:1.4.8 is deprecated: Please use @jridgewell/sourcemap-codec instead
+➤ YN0032: node-addon-api@npm:7.1.1: Implicit dependencies on node-gyp are discouraged
+➤ YN0061: @xmldom/xmldom@npm:0.7.13 is deprecated: this version is no longer supported, please update to at least 0.8.*
+➤ YN0061: level-js@npm:2.2.4 is deprecated: Superseded by browser-level (https://github.com/Level/community#faq)
+➤ YN0061: levelup@npm:0.18.6 is deprecated: Superseded by abstract-level (https://github.com/Level/community#faq)
+➤ YN0061: node-domexception@npm:1.0.0 is deprecated: Use your platform's native DOMException instead
+➤ YN0061: npmlog@npm:6.0.2 is deprecated: This package is no longer supported.
+➤ YN0061: phin@npm:2.9.3 is deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+➤ YN0061: phin@npm:3.7.1 is deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+➤ YN0061: object-keys@npm:0.2.0 is deprecated: Please update to the latest object-keys
+➤ YN0061: abstract-leveldown@npm:0.12.4 is deprecated: Superseded by abstract-level (https://github.com/Level/community#faq)
+➤ YN0061: deferred-leveldown@npm:0.2.0 is deprecated: Superseded by abstract-level (https://github.com/Level/community#faq)
+➤ YN0032: evp_bytestokey@npm:1.0.3: Implicit dependencies on node-gyp are discouraged
+➤ YN0061: @npmcli/move-file@npm:1.1.2 is deprecated: This functionality has been moved to @npmcli/fs
+➤ YN0061: are-we-there-yet@npm:3.0.1 is deprecated: This package is no longer supported.
+➤ YN0061: gauge@npm:4.0.4 is deprecated: This package is no longer supported.
+➤ YN0061: lodash.isequal@npm:4.5.0 is deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.

@@ -33,7 +33,6 @@
   "dependencies": {
     "@boxyhq/saml-jackson": "1.52.2",
     "@calcom/app-store": "workspace:*",
-    "@calcom/app-store-cli": "workspace:*",
     "@calcom/dayjs": "workspace:*",
     "@calcom/embed-core": "workspace:*",
     "@calcom/embed-react": "workspace:*",
@@ -46,7 +45,6 @@
     "@calcom/trpc": "workspace:*",
     "@calcom/tsconfig": "workspace:*",
     "@calcom/ui": "workspace:*",
-    "@coss/ui": "workspace:*",
     "@daily-co/daily-js": "^0.83.1",
     "@daily-co/daily-react": "^0.23.2",
     "@dub/analytics": "^0.0.27",

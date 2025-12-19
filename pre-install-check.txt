@@ -1,0 +1,30 @@
+PRE-INSTALL CHECK REPORT
+========================
+
+ISSUES FOUND:
+------------
+
+1. ROOT package.json scripts reference deleted packages:
+   - Line 17: "build:ai" references @calcom/ai (DELETED)
+   - Line 26: "build-storybook" references @calcom/storybook (DELETED)
+
+2. WORKSPACES STRUCTURE:
+   ✓ apps/web - EXISTS
+   ✓ packages/* - EXISTS (15 packages)
+   ✓ packages/embeds/* - EXISTS (3 packages: embed-core, embed-react, embed-snippet)
+   ✓ packages/features/* - EXISTS (2 packages: auth, ee)
+   ✓ packages/app-store - EXISTS
+   ✓ packages/app-store/* - EXISTS (4 integrations: googlecalendar, googlevideo, routing-forms, stripepayment)
+   ✓ packages/platform/* - EXISTS (7 packages: atoms, constants, enums, examples, libraries, types, utils)
+
+3. ALL WORKSPACE DEPENDENCIES CHECK:
+   ✓ All workspace:* dependencies reference existing packages
+   ✓ No references to deleted @calcom/app-store-cli
+   ✓ No references to deleted @coss/ui
+
+ACTIONS NEEDED:
+--------------
+1. Remove "build:ai" script from root package.json
+2. Remove "build-storybook" script from root package.json
+
+AFTER FIX, READY TO RUN: yarn install

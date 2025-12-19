@@ -453,18 +453,6 @@
       "cache": false,
       "outputs": ["dist/**", "build/**"]
     },
-    "@calcom/app-store-cli#build": {
-      "inputs": [
-        "../../packages/app-store/**/package.json",
-        "../../packages/app-store/**/config.json",
-        "../../packages/app-store/**/api/**",
-        "../../packages/app-store/**/components/**",
-        "../../packages/app-store/**/lib/**",
-        "../../packages/app-store/**/pages/**",
-        "../../packages/app-store-cli/src/**"
-      ],
-      "outputs": ["../../packages/app-store/*.generated.ts", "../../packages/app-store/*.generated.tsx"]
-    },
     "@calcom/embed-react#type-check": {
       "dependsOn": ["@calcom/embed-core#build", "@calcom/embed-snippet#build"],
       "outputs": ["dist/**", "build/**"]
